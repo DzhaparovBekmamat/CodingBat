@@ -394,7 +394,31 @@ public class WarmUp1 {
     public boolean nearHundred(int n) {
         return ((Math.abs(100 - n) <= 10) || (Math.abs(200 - n) <= 10));
     }
-}
 
+    /*
+    29)diff21(19) → 2
+    diff21(10) → 11
+    diff21(21) → 0
+     */
+    public int diff21(int n) {
+        if (n <= 21) {
+            return 21 - n;
+        } else {
+            return (n - 21) * 2;
+        }
+    }
+
+    /*
+    30)sleepIn(false, false) → true
+    sleepIn(true, false) → false
+    sleepIn(false, true) → true
+     */
+    public boolean sleepIn(boolean weekday, boolean vacation) {
+        if (!weekday && vacation) {
+            return true;
+        }
+        return false;
+    }
+}
 
 
