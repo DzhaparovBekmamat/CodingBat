@@ -1,7 +1,8 @@
-public class Main {
+public class WarmUp1 {
     public static void main(String[] args) {
     }
 
+    //Warmup-1
     /*
     1)endUp("Hello")->"HeLLO"
     endUp("hi there")->"hi thERE"
@@ -303,9 +304,97 @@ public class Main {
         }
         return (count >= 1 && count <= 3);
     }
+
     /*
-    22)
+    22)close10(8, 13) → 8
+    close10(13, 8) → 8
+    close10(13, 7) → 0
      */
+    public int close10(int a, int b) {
+        int aDiff = Math.abs(a - 10); //Math.abs - это метод, который возвращает абсолютное значение числа.
+        int bDiff = Math.abs(b - 10);
+        if (aDiff < bDiff) {
+            return a;
+        }
+        if (bDiff < aDiff) {
+            return b;
+        }
+        return 0;
+    }
+
+    /*
+    23)mixStart("mix snacks") → true
+    mixStart("pix snacks") → true
+    mixStart("piz snacks") → false
+     */
+    public boolean mixStart(String string) {
+        if (string.length() < 3) {
+            return false;
+        }
+        String two = string.substring(1, 3);
+        if (two.equals("ix")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+    24)hasTeen(13, 20, 10) → true
+    hasTeen(20, 19, 10) → true
+    hasTeen(20, 10, 13) → true
+     */
+    public boolean hasTeen(int a, int b, int c) {
+        return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19);
+    }
+
+    /*
+    25)startHi("hi there") → true
+    startHi("hi") → true
+    startHi("hello hi") → false
+     */
+    public boolean startHi(String string) {
+        if (string.length() < 2) {
+            return false;
+        }
+        String firstTwo = string.substring(0, 2);
+        if (firstTwo.equals("hi")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+    26)backAround("cat") → "tcatt"
+    backAround("Hello") → "oHelloo"
+    backAround("a") → "aaa"
+     */
+    public String backAround(String string) {
+        String front = string.substring(string.length() - 1);
+        return front + string + front;
+    }
+
+    /*
+    27)missingChar("kitten", 1) → "ktten"
+    missingChar("kitten", 0) → "itten"
+    missingChar("kitten", 4) → "kittn"
+     */
+    public String missingChar(String string, int n) {
+        String front = string.substring(0, n);
+        String back = string.substring(n + 1, string.length());
+        return front + back;
+    }
+
+    /*
+    28)nearHundred(93) → true
+    nearHundred(90) → true
+    nearHundred(89) → false
+     */
+    public boolean nearHundred(int n) {
+        return ((Math.abs(100 - n) <= 10) || (Math.abs(200 - n) <= 10));
+    }
 }
+
 
 
