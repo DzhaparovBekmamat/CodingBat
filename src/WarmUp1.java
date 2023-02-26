@@ -419,6 +419,149 @@ public class WarmUp1 {
         }
         return false;
     }
+
+    //Warmup-2
+    /*
+    1)stringTimes("Hi", 2) → "HiHi"
+    stringTimes("Hi", 3) → "HiHiHi"
+    stringTimes("Hi", 1) → "Hi"
+     */
+    public String stringTimes(String string, int n) {
+        String result = " ";
+        for (int i = 0; i < n; i++) {
+            result += string;
+        }
+        return result;
+    }
+
+    /*
+    2)doubleX("axxbb") → true
+    doubleX("axaxax") → false
+    doubleX("xxxxx") → true
+     */
+    public boolean doubleX(String string) {
+        int index = string.indexOf("x");
+        if (index == -1 || index == string.length() - 1) {
+            return false;
+        } else {
+            return string.charAt(index + 1) == 'x';
+        }
+    }
+
+    /*
+    3)last2("hixxhi") → 1
+    last2("xaxxaxaxx") → 1
+    last2("axxxaaxx") → 2
+     */
+    public int last2(String string) {
+        if (string.length() < 2) {
+            return 0;
+        }
+        String end = string.substring(string.length() - 2);
+        int count = 0;
+        for (int i = 0; i < string.length() - 2; i++) {
+            String sub = string.substring(i, i + 2);
+            if (sub.equals(end)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /*
+    4)array123([1, 1, 2, 3, 1]) → true
+    array123([1, 1, 2, 4, 1]) → false
+    array123([1, 1, 2, 1, 2, 3]) → true
+     */
+    public boolean array123(int[] nums) {
+        if (nums.length < 3) {
+            return false;
+        }
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*
+    5)altPairs("kitten") → "kien"
+    altPairs("Chocolate") → "Chole"
+    altPairs("CodingHorror") → "Congrr"
+     */
+    public String altPairs(String string) {
+        StringBuilder stringBuilder = new StringBuilder();
+        /*StringBuilder sb = new StringBuilder();
+        sb.append("Это ");
+        sb.append("строка ");
+        sb.append("создана ");
+        sb.append("с помощью ");
+        sb.append("класса StringBuilder.");
+        String result = sb.toString();
+        "Это строка создана с помощью класса StringBuilder."*/
+        for (int i = 0; i < string.length(); i = i + 4) {
+            stringBuilder.append(string.charAt(i));
+            if (i + 1 < string.length()) {
+                stringBuilder.append(string.charAt(i + 1));
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    /*
+    6)noTriples([1, 1, 2, 2, 1]) → true
+    noTriples([1, 1, 2, 2, 2, 1]) → false
+    noTriples([1, 1, 1, 2, 2, 2, 1]) → false
+     */
+    public boolean noTriples(int[] nums) {
+        for (int i = 0; i < (nums.length - 2); i++) {
+            int first = nums[i];
+            if (nums[i + 1] == first && nums[i + 2] == first) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
+    7)frontTimes("Chocolate", 2) → "ChoCho"
+    frontTimes("Chocolate", 3) → "ChoChoCho"
+    frontTimes("Abc", 3) → "AbcAbcAbc"
+     */
+    public String frontTimes(String string, int n) {
+        int frontLen = 3;
+        if (frontLen > string.length()) {
+            frontLen = string.length();
+        }
+        String front = string.substring(0, frontLen);
+        String result = " ";
+        for (int i = 0; i < n; i++) {
+            result += front;
+        }
+        return result;
+    }
+
+    /*
+    8)stringBits("Hello") → "Hlo"
+    stringBits("Hi") → "H"
+    stringBits("Heeololeo") → "Hello"
+     */
+    public String stringBits(String string) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < string.length(); i += 2) {
+            stringBuilder.append(string.charAt(i));
+        }
+        return stringBuilder.toString();
+    }
+    /*
+    9)arrayCount9([1, 2, 9]) → 1
+    arrayCount9([1, 9, 9]) → 2
+    arrayCount9([1, 9, 9, 3, 9]) → 3
+     */
+    public int arrayCount9(int[] nums) {
+        
+    }
 }
 
 
